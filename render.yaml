@@ -1,0 +1,12 @@
+# PRIMARY on Render free plan. CHAOS_TOKEN has sync:false so you enter it in the dashboard (never commit it).
+services:
+  - type: web
+    name: failover-demo-primary
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ENDPOINT
+        value: primary
+      - key: CHAOS_TOKEN
+        sync: false

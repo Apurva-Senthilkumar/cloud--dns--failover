@@ -1,0 +1,11 @@
+# BACKUP: use a DIFFERENT host or a different Render workspace/account (free tier = 750 hours/workspace/month,
+# not enough for two always-on services). On any Docker host set env ENDPOINT=backup (+ optional CHAOS_TOKEN).
+services:
+  - type: web
+    name: failover-demo-backup
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ENDPOINT
+        value: backup
